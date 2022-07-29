@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pos_order_k_inherit" model="ir.ui.view">
+        <field name="name">pos.order.total</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='amount_tax']" position="before">
+                <field name="pro_total"/>
+                <field name="pro_qty"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

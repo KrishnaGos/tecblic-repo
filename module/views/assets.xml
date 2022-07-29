@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="add_pos" inherit_id="point_of_sale.assets" name="add_point_of_sale assets">
+        <xpath expr="//script[last()]" position="after">
+            <script type="text/javascript" src="/module/static/src/js/product_total.js">
+            </script>
+        </xpath>
+
+<!--        <xpath expr="//script[contains(@src, '/point_of_sale/static/src/js/Screens/ProductScreen/OrderWidget.js')]"-->
+<!--               position="attributes">-->
+<!--            <attribute name="src">type="text/javascript" src="/module/static/src/js/product_total.js"</attribute>-->
+<!--        </xpath>-->
+    </template>
+</odoo>

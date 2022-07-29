@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates id="template" xml:space="preserve">
+
+     <t t-name="OrderReceipt" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('pos-receipt-order-data')]" position="after">
+            <!--                    <t t-debug="pdb"/>-->
+            <div style="text-align:left;">
+                <span>Total Items:
+                    <t t-esc="env.pos.get_order().pro_qty"/>
+                </span>
+                <br/>
+                <br/>
+                <span>Total Qty:
+                    <t t-esc="env.pos.get_order().pro_total"/>
+                </span>
+            </div>
+        </xpath>
+    </t>
+</templates>
+
+
+
