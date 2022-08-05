@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_download_xlxs_report" model="ir.actions.server">
+            <field name="name">Download Xlxs Report</field>
+            <field name="model_id" ref="tecblic_pvt_ltd.model_customer_info_details"/>
+            <field name="type">ir.actions.server</field>
+            <field name="binding_model_id" ref="model_customer_info_details" />
+            <field name="state">code</field>
+            <field name="code">
+                action = records.download_xlxs()
+            </field>
+        </record>
+    </data>
+    <data>
+        <record id="action_drive_download_xlxs_report" model="ir.actions.server">
+            <field name="name">Download Drive Xlxs Report</field>
+            <field name="model_id" ref="tecblic_pvt_ltd.model_diver_login"/>
+            <field name="type">ir.actions.server</field>
+            <field name="binding_model_id" ref="model_diver_login" />
+            <field name="state">code</field>
+            <field name="code">
+                action = records.drive_download_xlxs()
+            </field>
+        </record>
+    </data>
+</odoo>

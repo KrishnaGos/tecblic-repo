@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <record id="coupon_master_data_record_1" model="coupon.master">
+            <field name="coupon_code">PRE10</field>
+            <field name="discount">10</field>
+            <field name="activation">2021-05-20</field>
+            <field name="expirty">2022-05-20</field>
+            <field name="click">0</field>
+            <field name="usage">200</field>
+            <field name="typee">percentage</field>
+            <field name="validity">per</field>
+            <field name="usage_limit">10000</field>
+            <field name="delivery">yes</field>
+            <field name="status">active</field>
+        </record>
+
+        <record id="coupon_master_record_2" model="coupon.master">
+            <field name="coupon_code">BOX10</field>
+            <field name="discount">10</field>
+            <field name="activation">2021-05-15</field>
+            <field name="expirty">2022-06-22</field>
+            <field name="click">0</field>
+            <field name="usage">100</field>
+            <field name="typee">percentage</field>
+            <field name="validity">per</field>
+            <field name="usage_limit">10000</field>
+            <field name="delivery">yes</field>
+            <field name="status">active</field>
+        </record>
+
+        <record id="coupon_master_record_3" model="coupon.master">
+            <field name="coupon_code">SHOP27</field>
+            <field name="discount">27</field>
+            <field name="typee">percentage</field>
+            <field name="validity">tem</field>
+            <field name="usage_limit">100</field>
+            <field name="delivery">no</field>
+            <field name="status">inactive</field>
+        </record>
+
+        <record id="coupon_master_record_4" model="coupon.master">
+            <field name="coupon_code">WEEKEND5</field>
+            <field name="discount">5</field>
+            <field name="typee">percentage</field>
+            <field name="validity">tem</field>
+            <field name="usage_limit">10000</field>
+            <field name="delivery">no</field>
+            <field name="status">inactive</field>
+        </record>
+    </data>
+</odoo>

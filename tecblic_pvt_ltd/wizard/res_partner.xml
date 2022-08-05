@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="vendor_generate_view_form" model="ir.ui.view">
+        <field name="name">Vendors Details Form</field>
+        <field name="model">res.partner.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Generate Report Details">
+                <group>
+                    <group>
+                        <field name="vendors_date"/>
+                        <field name="deliver_date"/>
+                        <field name="rating"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="confirm" string="Generate Report" type="object" class="oe_highlight"/>
+                    <button string="Discard" class="oe_highlight" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="vendor_generate_action" model="ir.actions.act_window">
+        <field name="name">Vendors Details</field>
+        <field name="res_model">res.partner.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="vendor_generate_view_form"/>
+    </record>
+</odoo>

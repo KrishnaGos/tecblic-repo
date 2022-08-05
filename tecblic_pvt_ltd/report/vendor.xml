@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="applicant_report_vendor" model="ir.actions.report">
+        <field name="name">Vendor_Report</field>
+        <field name="model">res.partner.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">tecblic_pvt_ltd.vendors_applicant_report_details</field>
+        <field name="report_file">tecblic_pvt_ltd.vendors_applicant_report_details</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Hr Department Inherit Kanban view-->
+    <record id="hr_department_view_department_seque" model="ir.ui.view">
+        <field name="name">hr.employee.department.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='job_title']" position="after">
+                    <div>
+                        <field name="seq_name"/>
+                    </div>
+                    <!--                    <field name="business_executive"/>-->
+                    <!--                    <field name="design"/>-->
+                    <!--                    <field name="development"/>-->
+                </xpath>
+            </data>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="vendors_report" name="Vendors Reports" parent="purchase.purchase_report_main"
+            action="vendor_generate_action" sequence="99"/>
+</odoo>
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+		<record id="product_generate_view_form" model="ir.ui.view">
+        <field name="name">product.generate.wizard.form</field>
+        <field name="model">product.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Generate produce list">
+                <group>
+                    <field name="sale_price"/>
+                    <field name="cost_price"/>
+					<field name="percentage"/>
+<!--					<field name="total_sale" invisible="0"/>-->
+<!--					<field name="total_cost" invisible="0"/>-->
+
+				</group>
+				<footer>
+					<button name="update_bulk_prices" string="Update" type="object" class="oe_highlight" />
+<!--					<button name="update_product_price" string="Update" type="object" class="oe_highlight" />-->
+					<button string="Discard" class="oe_highlight" special="cancel" />
+				</footer>
+			</form>
+		</field>
+		</record>
+
+
+		<record id="product_tb_generate_action" model="ir.actions.act_window">
+			<field name="name">Produce Wizard</field>
+			<field name="res_model">product.wizard</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+			<field name="view_id" ref="product_generate_view_form"/>
+		</record>
+
+
+		<record id="product_prcicelist_action" model="ir.actions.server">
+			<field name="name">Product Pricelist Update</field>
+			<field name="model_id" ref="product.model_product_template"/>
+			<field name="binding_model_id" ref="product.model_product_template"/>
+			<field name="state">code</field>
+			<field name="binding_view_types">list</field>
+			<field name="code">action = records.update_price_product()
+			</field>
+		</record>
+
+</odoo>

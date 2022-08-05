@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="coupon_master_tree_view" model="ir.ui.view">
+            <field name="name">coupon.master.tree.view</field>
+            <field name="model">coupon.master</field>
+            <field name="arch" type="xml">
+                <tree string="Coupon Information">
+                    <field name="coupon_code"/>
+                    <field name="discount"/>
+                    <field name="typee"/>
+                    <field name="usage_limit"/>
+                    <field name="activation"/>
+                    <field name="expirty"/>
+                    <field name="click"/>
+                    <field name="usage"/>
+                    <field name="validity"/>
+                    <field name="delivery"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="coupon_master_data_details_action" model="ir.actions.act_window">
+            <field name="name">Coupon Master</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">coupon.master</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+                name="Coupons"
+                id="tecblic_pvt_Coupon_menu"
+                parent="tecblic_pvt_ltd.customer_menu_root"
+                action="coupon_master_data_details_action"
+                sequence="20"/>
+    </data>
+
+</odoo>

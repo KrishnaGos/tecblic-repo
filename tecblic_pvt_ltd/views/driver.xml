@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="diver_login_form_view" model="ir.ui.view">
+        <field name="name">diver.login.form.view</field>
+        <field name="model">diver.login</field>
+        <field name="arch" type="xml">
+            <form string="Diver login Info">
+                <sheet>
+                    <group>
+                        <field name="driver_id"/>
+                        <field name="check_in"/>
+                        <field name="check_out"/>
+                        <field name="work_hours" string="Work Hours" widget="float_time"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="diver_login_tree_view" model="ir.ui.view">
+        <field name="name">diver.login.tree.view</field>
+        <field name="model">diver.login</field>
+        <field name="arch" type="xml">
+            <tree string="Driver attendances">
+                <field name="driver_id"/>
+                <field name="check_in"/>
+                <field name="check_out"/>
+                <field name="work_hours" string="Work Hours" widget="float_time"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--    <record id="diver_login_k_search_view" model="ir.ui.view">-->
+    <!--        <field name="name">diver.login.search.view</field>-->
+    <!--        <field name="model">diver.login</field>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <search string="Driver attendances Search">-->
+    <!--                <field name="check_in"/>-->
+    <!--            </search>-->
+    <!--        </field>-->
+    <!--    </record>-->
+<!--    <record id="view_diver_login_search" model="ir.ui.view">-->
+    <!--        <field name="name">diver.login.search.view</field>-->
+    <!--        <field name="model">diver.login</field>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <search string="Driver search">-->
+    <!--                <field name="driver_id"/>-->
+    <!--                <field name="check_in"/>-->
+    <!--&lt;!&ndash;                <filter string="check in" name="check_in" context="{'check_in': True}"/>&ndash;&gt;-->
+    <!--            </search>-->
+    <!--        </field>-->
+    <!--    </record>-->
+
+    <record id="driver_details_t_action_info" model="ir.actions.act_window">
+        <field name="name">Driver Login Details</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">diver.login</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+            name="Driver"
+            id="tecblic_board_driver_menu"
+            parent="tecblic_pvt_ltd.customer_menu_root"
+            action="driver_details_t_action_info"
+            sequence="25"/>
+
+</odoo>

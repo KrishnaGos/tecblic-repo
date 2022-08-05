@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_coupon_form_inherit" model="ir.ui.view">
+        <field name="name">sale.coupon.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='note']" position="after">
+                <button name="%(tecblic_pvt_ltd.coupon_benifits_action)d" type="action"
+                        string="Coupon"
+                        class="oe_highlight"/>
+            </xpath>
+            <xpath expr="//field[@name='tax_totals_json']" position="after">
+                <field name="coupon_amt"/>
+                <field name="subtotal_amt"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

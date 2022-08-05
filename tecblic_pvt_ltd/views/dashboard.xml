@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="act_customer_appointment_infom" model="ir.actions.act_window">
+            <field name="name">Customer Appointments</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">customer.info.details</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="tecblic_pvt_ltd.customer_info_graph_view"/>
+        </record>
+
+        <record id="act_book_appointment_infom" model="ir.actions.act_window">
+            <field name="name">Book Appointments</field>
+            <field name="res_model">customer.info.details</field>
+            <field name="view_mode">calendar</field>
+            <field name="view_id" ref="tecblic_pvt_ltd.customer_info_calendar_view"/>
+        </record>
+
+        <record id="act_patient_list_infom" model="ir.actions.act_window">
+            <field name="name">Customers Details</field>
+            <field name="res_model">customer.info.details</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--My Dashboard-->
+        <record model="ir.ui.view" id="board_dash_view_info">
+            <field name="name">Customer Dashboard</field>
+            <field name="model">board.board</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="My Dashboard">
+                    <board style="1-2">
+                        <column>
+                            <action
+                                    string="Customer Appointments"
+                                    name="%(tecblic_pvt_ltd.act_customer_appointment_infom)d"/>
+                            <action
+                                    string="Customer Records"
+                                    name="%(tecblic_pvt_ltd.act_patient_list_infom)d"/>
+                        </column>
+                        <column>
+                        <action
+                                    string="Customer Records"
+                                    name="%(tecblic_pvt_ltd.act_book_appointment_infom)d"/>
+                        </column>
+                    </board>
+                </form>
+            </field>
+        </record>
+
+<!--        My Dashboard Action-->
+        <record model="ir.actions.act_window" id="my_dash_action_info">
+            <field name="name">Dashboard</field>
+            <field name="res_model">board.board</field>
+            <field name="view_mode">form</field>
+            <field name="usage">menu</field>
+            <field name="view_id" ref="board_dash_view_info"/>
+        </record>
+    </data>
+
+    <data>
+        <!--My Dashboard Menu-->
+        <menuitem
+                name="Dashboard"
+                id="tecblic_board_my_dash_info"
+                parent="tecblic_pvt_ltd.customer_menu_root"
+                action="my_dash_action_info"
+                sequence="10"/>
+    </data>
+</odoo>

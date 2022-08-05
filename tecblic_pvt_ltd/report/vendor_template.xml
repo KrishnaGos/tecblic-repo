@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="vendors_applicant_report_details">
+        <t t-set="data_report_landscape" t-value="True"/>
+        <t t-set="full_width" t-value="True"/>
+        <t t-call="web.html_container">
+            <t t-call="web.internal_layout">
+                <t t-foreach="docs" t-as="o">
+                    <t t-foreach="o.get_report_values_with_account_move()" t-as="val">
+                        <div class="oe_structure"/>
+                        <t t-foreach="val['total_months']" t-as="month">
+                            <div>
+                                <h1 style="page-break-before:always;">
+                                    <p align="center">
+                                        <h1 class="text-center"
+                                            style="background-color:#f2f4f8;border:1px solid white;">
+                                            <b>Vendors Bills Details</b>
+                                        </h1>
+                                    </p>
+                                </h1>
+                                <h2 class="text-center"
+                                    style="background-color:#f2f4f8;border:1px solid white;">
+                                    <span t-esc=" month"/>
+                                    <!--                                    <span> - 2022</span>-->
+                                    <span t-esc="val['records'][0].date.strftime('%Y')"/>
+                                </h2>
+                            </div>
+                            <table class="table table-sm o_main_table" name="vendor">
+                                <thead>
+                                    <tr>
+                                        <th name="th_sequence" class="text-left">
+                                            <span>Sr No</span>
+                                        </th>
+                                        <th name="th_date" class="text-left">
+                                            <span>Vendor Name</span>
+                                        </th>
+                                        <th name="th_state" class="text-left">
+                                            <span>Bill Date</span>
+                                        </th>
+                                        <th name="th_jobs_count" class="text-left">
+                                            <span>Total</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <t t-set="i" t-value="1"/>
+                                <t t-foreach="val['records']" t-as="names">
+                                    <tr>
+                                        <t t-if="names.date.strftime('%B') == month">
+                                            <td>
+                                                <span t-esc="i"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="names.invoice_partner_display_name"/>
+                                            </td>
+                                            <td>
+                                                <!--                                                    <span t-esc="names.date.strftime('%Y')"/>-->
+                                                <span t-esc="names.date"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="names.amount_total_signed"/>
+                                            </td>
+                                            <t t-set="i" t-value="i+1"/>
+                                        </t>
+                                    </tr>
+                                </t>
+                            </table>
+                        </t>
+                    </t>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
+
+
+
+

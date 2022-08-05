@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!--    <record id="tecblic_pvt_ltd_report" model="ir.actions.report">-->
+<!--        <field name="name">Tecblic Report</field>-->
+<!--        <field name="model">res.partner</field>-->
+<!--        <field name="report_type">qweb-pdf</field>-->
+<!--        <field name="report_name">tecblic_pvt_ltd.tecblic_pvt_report_Print</field>-->
+<!--        <field name="report_file">tecblic_pvt_ltd.tecblic_pvt_report_Print</field>-->
+<!--        <field name="binding_model_id" ref="model_res_partner"/>-->
+<!--        <field name="binding_type">report</field>-->
+<!--    </record>-->
+
+</odoo>

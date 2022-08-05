@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="sequence_hr_department_k" model="ir.sequence">
+            <field name="name">Hr Department Seq</field>
+            <field name="code">hr.employee.admin</field>
+            <field name="prefix">AD</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="sequence_hr_department_design" model="ir.sequence">
+            <field name="name">Hr Department Design</field>
+            <field name="code">hr.employee.design</field>
+            <field name="prefix">D</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="sequence_hr_department_development" model="ir.sequence">
+            <field name="name">Hr Department Development</field>
+            <field name="code">hr.employee.development</field>
+            <field name="prefix">Devlp</field>
+            <field name="padding">2</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="sequence_hr_department_bde" model="ir.sequence">
+            <field name="name">Hr Department BDE</field>
+            <field name="code">hr.employee.bde</field>
+            <field name="prefix">BDE</field>
+            <field name="padding">3</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>
+
+
